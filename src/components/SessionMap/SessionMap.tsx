@@ -3,7 +3,7 @@ import { useEffect, createRef, useState } from 'react';
 import { cn } from '../../lib/helperFunctions';
 
 import { WorldSVGData, getCountryCode } from './world-svg-data';
-import { CountryCodeType, SessionMapProps } from './SessionMap.types';
+import { SessionMapProps } from './SessionMap.types';
 
 export function SessionMap(props: SessionMapProps) {
   const mapSVGRef = createRef<SVGSVGElement>();
@@ -115,34 +115,6 @@ export function SessionMap(props: SessionMapProps) {
     }
   };
 
-  const getCountryFillColor = (countryCode: CountryCodeType) => {
-    const sessionCount = props.countrySessionCountMap?.get(countryCode) || 0;
-
-    let fillColorClassName = '';
-    switch (true) {
-      case sessionCount < 1:
-        fillColorClassName = '';
-        break;
-      case sessionCount <= 50:
-        fillColorClassName = 'fill-sky-50';
-        break;
-      case sessionCount <= 500:
-        fillColorClassName = 'fill-sky-100';
-        break;
-      case sessionCount <= 2000:
-        fillColorClassName = 'fill-sky-200';
-        break;
-      case sessionCount <= 10000:
-        fillColorClassName = 'fill-sky-300';
-        break;
-      case sessionCount > 10000:
-        fillColorClassName = 'fill-sky-400';
-        break;
-    }
-
-    return fillColorClassName;
-  };
-
   const SVGCountryPath = (
     className: string,
     item: { d: string; name: string; id?: string },
@@ -152,7 +124,7 @@ export function SessionMap(props: SessionMapProps) {
       <path
         className={cn(
           className,
-          getCountryFillColor(getCountryCode(item.name))
+          props.valueByCountryMap?.get(getCountryCode(item.name))?.className
         )}
         key={key}
         name={item.name}
@@ -171,7 +143,7 @@ export function SessionMap(props: SessionMapProps) {
   };
 
   return (
-    <div className="mt-5 min-w-[350px] select-none rounded-md border-2 border-slate-300 p-3 shadow-md">
+    <div className={props.className}>
       <div onMouseLeave={() => setHoveredElementCountryName('')}>
         <svg
           baseProfile="tiny"
@@ -225,10 +197,10 @@ export function SessionMap(props: SessionMapProps) {
             <span className="font-bold">{hoveredElementCountryName}</span>
           </div>
           <span className="font-light">
-            Sessions:{' '}
-            {props.countrySessionCountMap?.get(
+            {props.valueTytle}:{' '}
+            {props.valueByCountryMap?.get(
               getCountryCode(hoveredElementCountryName)
-            ) || '0'}
+            )?.value || '0'}
           </span>
         </div>
       </div>
@@ -253,3 +225,9 @@ export function SessionMap(props: SessionMapProps) {
     </div>
   );
 }
+
+SessionMap.defaultProps = {
+  className:
+    'mt-5 select-none rounded-md border-2 border-slate-300 p-3 shadow-md min-w-[350px]',
+  valueTytle: 'Sessions',
+};
