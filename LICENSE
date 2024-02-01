@@ -19,3 +19,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+---
+
+This software uses source code and resources from the `flag-icons` npm package, 
+which is also licensed under the MIT License.
+The `flag-icons` package can be found at: https://www.npmjs.com/package/flag-icons
+Portions of the `flag-icons` source code, including SVG files, 
+may be present in this software and are subject to the original MIT License terms. 
+The SVG files from the `flag-icons` package are distributed under the same MIT License 
+and can be located in the `flag-icons` package or repository.
+For more details on the `flag-icons` license and resources, 
+please refer to the original `flag-icons` license file and documentation at https://github.com/lipis/flag-icons.

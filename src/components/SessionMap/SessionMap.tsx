@@ -5,6 +5,8 @@ import { cn } from '../../lib/helperFunctions';
 import { WorldSVGData, getCountryCode } from './world-svg-data';
 import { SessionMapProps } from './SessionMap.types';
 
+import '../../lib/flag-icons/css/flag-icons.min.css';
+
 export function SessionMap(props: SessionMapProps) {
   const mapSVGRef = createRef<SVGSVGElement>();
   const SVG_WIDTH = 2000;
