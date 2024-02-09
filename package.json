@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -14,17 +14,11 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
   "peerDependencies": {
     "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
   },
   "prettier": {
     "printWidth": 80,
@@ -34,6 +28,10 @@
   },
   "name": "session-country-map",
   "author": "Dominik Kiss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/domkss/session-world-map"
+  },
   "module": "dist/session-country-map.esm.js",
   "size-limit": [
     {
