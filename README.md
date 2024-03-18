@@ -57,7 +57,11 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
-This software uses source code and resources from the `flag-icons` npm package, 
+- This software uses source code and resources from the `flag-icons` npm package, 
 which is also licensed under the MIT License.
 The `flag-icons` package can be found at: https://www.npmjs.com/package/flag-icons
+
+- The base world map SVG data is provided by simplemaps.com and is also licensed under the MIT License. 
+You can find it at https://simplemaps.com/resources/svg-world
+
 
