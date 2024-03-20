@@ -7,7 +7,11 @@ import { SessionMapProps } from './SessionMap.types';
 
 import '../../lib/flag-icons/css/flag-icons.min.css';
 
-export function SessionMap(props: SessionMapProps) {
+export function SessionMap({
+  className = 'mt-5 select-none rounded-md border-2 border-slate-300 p-3 shadow-md min-w-[350px]',
+  valueTytle = 'Sessions',
+  valueByCountryMap,
+}: SessionMapProps) {
   const mapSVGRef = createRef<SVGSVGElement>();
   const SVG_WIDTH = 2000;
   const SVG_HEIGHT_MULTIPLIER = 0.4285;
@@ -126,7 +130,7 @@ export function SessionMap(props: SessionMapProps) {
       <path
         className={cn(
           className,
-          props.valueByCountryMap?.get(getCountryCode(item.name))?.className
+          valueByCountryMap?.get(getCountryCode(item.name))?.className
         )}
         key={key}
         name={item.name}
@@ -145,7 +149,7 @@ export function SessionMap(props: SessionMapProps) {
   };
 
   return (
-    <div className={props.className}>
+    <div className={className}>
       <div onMouseLeave={() => setHoveredElementCountryName('')}>
         <svg
           baseProfile="tiny"
@@ -199,10 +203,9 @@ export function SessionMap(props: SessionMapProps) {
             <span className="font-bold">{hoveredElementCountryName}</span>
           </div>
           <span className="font-light">
-            {props.valueTytle}:{' '}
-            {props.valueByCountryMap?.get(
-              getCountryCode(hoveredElementCountryName)
-            )?.value || '0'}
+            {valueTytle}:{' '}
+            {valueByCountryMap?.get(getCountryCode(hoveredElementCountryName))
+              ?.value || '0'}
           </span>
         </div>
       </div>
@@ -227,9 +230,3 @@ export function SessionMap(props: SessionMapProps) {
     </div>
   );
 }
-
-SessionMap.defaultProps = {
-  className:
-    'mt-5 select-none rounded-md border-2 border-slate-300 p-3 shadow-md min-w-[350px]',
-  valueTytle: 'Sessions',
-};
