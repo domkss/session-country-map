@@ -1,7 +1,7 @@
 # Session World Map React Component
 This component allows you to integrate interactive maps into your React applications easily, enabling you to display session, click, event data effectively on admin dashboards.
 
-<p align="center"><img src="https://i.ibb.co/df3Phf4/Session-Map-Hover.png" alt="Preview Image"><p>
+<p align="center"><img src="https://github.com/user-attachments/assets/44cd90b9-3fc2-46da-bb66-6615b9805fcc" alt="Preview Image"><p>
 
 ## Features
 
