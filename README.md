@@ -1,4 +1,7 @@
 # Session World Map React Component
+<p align="left">
+<a href="https://badge.fury.io/js/session-country-map"><img src="https://badge.fury.io/js/session-country-map.svg" alt="npm version" height="18"></a>
+</p>
 This component allows you to integrate interactive maps into your React applications easily, enabling you to display session, click, event data effectively on admin dashboards.
 
 <p align="center"><img src="https://github.com/user-attachments/assets/44cd90b9-3fc2-46da-bb66-6615b9805fcc" alt="Preview Image"><p>
